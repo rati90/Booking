@@ -1,0 +1,17 @@
+
+version: "3.7"
+
+services:
+  backend:
+    build: .
+    command: python main.py
+
+  mongodb-service:
+    image: mongo:latest
+    ports:
+      - 27017:27017
+    volumes:
+      - /2021.10.13Booking:/data/db
+
+volumes:
+  mongodb_volume:
